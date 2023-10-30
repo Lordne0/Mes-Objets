@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/*" # Applique les en-têtes à toutes les routes
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
