@@ -1,14 +1,4 @@
 
-/*
-*   Stripe WebGl Gradient Animation
-*   All Credits to Stripe.com
-*   ScrollObserver functionality to disable animation when not scrolled into view has been disabled and 
-*   commented out for now.
-*   https://kevinhufnagl.com
-*/
-
-
-//Converting colors to proper format
 function normalizeColor(hexCode) {
   return [(hexCode >> 16 & 255) / 255, (hexCode >> 8 & 255) / 255, (255 & hexCode) / 255]
 } ["SCREEN", "LINEAR_LIGHT"].reduce((hexCode, t, n) => Object.assign(hexCode, {
@@ -501,22 +491,3 @@ class Gradient {
       }).filter(Boolean).map(normalizeColor)
   }
 }
-
-
-
-
-/*
-*Finally initializing the Gradient class, assigning a canvas to it and calling Gradient.connect() which initializes everything,
-* Use Gradient.pause() and Gradient.play() for controls.
-*
-* Here are some default property values you can change anytime:
-* Amplitude:    Gradient.amp = 0
-* Colors:       Gradient.sectionColors (if you change colors, use normalizeColor(#hexValue)) before you assign it.
-*
-*
-* Useful functions
-* Gradient.toggleColor(index)
-* Gradient.updateFrequency(freq)
-*/
-
-export { Gradient };
