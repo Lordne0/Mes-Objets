@@ -242,7 +242,7 @@ class MiniGl {
           })
       }
   }
-  setSize(e = 640, t = 480) {
+  setSize(e = 1280, t = 720) {
       this.width = e, this.height = t, this.canvas.width = e, this.canvas.height = t, this.gl.viewport(0, 0, e, t), this.commonUniforms.resolution.value = [e, t], this.commonUniforms.aspectRatio.value = e / t, this.debug("MiniGL.setSize", {
           width: e,
           height: t
@@ -366,7 +366,7 @@ class Gradient {
                       type: "vec2"
                   }),
                   noiseSpeed: new this.minigl.Uniform({
-                      value: 0.00001
+                      value: 0.0000025
                   })
               },
               type: "struct"
@@ -394,7 +394,7 @@ class Gradient {
                       value: 8
                   }),
                   noiseFlow: new this.minigl.Uniform({
-                      value: 3
+                      value: 0
                   }),
                   noiseSeed: new this.minigl.Uniform({
                       value: this.seed
@@ -493,3 +493,9 @@ class Gradient {
       }).filter(Boolean).map(normalizeColor)
   }
 }
+
+
+const gradient = new Gradient()
+
+// Call `initGradient` with the selector to your canvas
+gradient.initGradient('#gradient-canvas')
